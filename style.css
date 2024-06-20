@@ -1,0 +1,246 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+    font-weight: 400;
+}
+header{
+    background-color: #d5dfd6;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    min-height:100px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+}
+header h1{
+    font-weight: 500;
+}
+header nav{
+    display: flex;
+    gap: 20px;
+}
+header img{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+.navbar div{
+    cursor: pointer;
+}
+.navbar div a{
+    color: black;
+    text-decoration: none;
+}
+.navbar div div{
+    width: 100%;
+    height: 1px;
+    border: 1px solid black;
+    transform: scaleX(0);
+    transition: all .2s ease-in-out;
+}
+/* .navbar:hover div a{
+    color: red;
+} */
+.navbar div:hover div{
+    transform: scaleX(1);
+}
+
+main{
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 150px;
+    padding-bottom: 80px;
+}
+
+.container_1 div{
+    width: 40vw;
+    padding-left: 20px;
+}
+.design{
+    position: absolute;
+    width: 200px !important;
+    top: -40px;
+    left: -120px;
+    z-index: -1;
+}
+.container_1{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 4;
+    gap: 20px;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 80px;
+    border-radius: 15px;
+}
+.container_1 img{
+    width: 500px;
+    border-radius: 10px;
+}
+
+.container_2{
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+.title_resto_viewer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.title_resto_viewer h1{
+    font-size: 2.3em;
+}
+.title_resto_viewer p{
+    color: #949f95;
+    font-size: 20px;
+}
+
+.restaurant-grid_container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.restaurant-grid img{
+    width: 100%;height: 100%;
+    border-radius: 15px 15px 0px 0px;
+}
+.restaurant-grid p{
+    color: #949f95;
+}
+.restaurant-grid{
+    border: 1px solid #d5dfd6;
+    min-height: 500px;
+    border-radius: 15px;
+    box-shadow: rgb(192, 190, 190) 1px 1px 8px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.restaurant-grid:hover{
+    transform: translateY(-10px);
+}
+.restaurant-grid_top{
+    position: relative;
+    height: 60%;
+}
+.restaurant-grid_top div{
+    background-color: rgba(148, 159, 149, 0.5);
+    width: fit-content;
+    padding: 0px 10px;
+    border-radius: 100px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    backdrop-filter: blur(10px);
+}
+.restaurant-grid_top div p{
+    color: white;
+}
+.restaurant-grid_datas{
+    padding: 0px 20px;
+    padding-top: 20px;
+}
+
+
+
+
+/**
+Media query
+*/
+
+@media screen and (max-width: 1300px){
+    .container_1{
+        flex-direction: column-reverse;
+        gap: 40px;
+        border: none;
+    }
+    .container_1 div{
+        width: 100%;
+    }
+    .container_1 div h2{
+        text-align: center;
+    }
+    .title_resto_viewer p, h1{
+        text-align: center;
+    }
+    .restaurant-grid_container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    main{
+        padding: 0px 80px;
+    }
+    .design{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px ) {
+    .restaurant-grid_container{
+        grid-template-columns: 1fr;
+    }
+    main{
+        padding: 0px 20px;
+    }
+    .container_1 img{
+        width: 100%;
+        position: absolute;
+        border-radius: 0;
+    }
+    .container_1{
+        align-items: center;
+        justify-content: center;
+        border: none;
+        padding-bottom: 150px;
+    }
+    .container_1 div{
+        background-color: rgba(148, 159, 149, 0.5);
+        backdrop-filter: blur(20px);
+        position: relative;
+        z-index: 2;
+        color: white;
+        padding: 10px;
+        border-radius: 15px;
+    }
+}
+
+@media screen and (max-width: 700px ) {
+    .container_1{
+        padding-bottom: 100px;
+    }
+    .container_1 div{
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 550px ) {
+    header{
+        flex-direction: column;
+    }
+    .container_1{
+        padding-bottom: 50px;
+    }
+    .container_1 img{
+        top: 160px;
+     }
+}
+
+@media screen and (max-width: 450px ) {
+    .container_1 img{
+        height: 35vh;
+    }
+    header h1{
+        font-size: 1.8em;
+    }
+}
